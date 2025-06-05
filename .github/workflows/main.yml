@@ -12,6 +12,7 @@ jobs:
     steps:
       # --- SSH for private submodule ---------------------------------
       - name: Set up SSH for private submodules
+        working-directory: .
         run: |
           npm run install:all
           npm run build
