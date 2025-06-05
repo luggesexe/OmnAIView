@@ -1,0 +1,23 @@
+name: Build-Windows-Binary
+
+permissions:
+  actions: read
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-linux:
+    runs-on: windows-latest
+    steps:
+      # --- SSH for private submodule ---------------------------------
+      - name: Set up SSH for private submodules
+        run: |
+          npm run install:all
+          npm run build
+      # --- upload build artifact------------------
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: OmnaiView-windows-${{ github.ref_name }}
+          path: build/OmnAIView
