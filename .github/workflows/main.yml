@@ -22,6 +22,6 @@ jobs:
         with:
           name: OmnaiView-windows-${{ github.ref_name }}
           path: |
-            electron\out\make\squirrel.windows\x64\RELEASES
-            electron\out\make\squirrel.windows\x64\OmnAIView-0.2.0-full.nupkg
-            electron\out\make\squirrel.windows\x64\OmnAIView-0.2.0 Setup
+            "electron\out\make\squirrel.windows\x64\RELEASES"
+            "electron\out\make\squirrel.windows\x64\OmnAIView-0.2.0-full.nupkg"
+            "electron\out\make\squirrel.windows\x64\OmnAIView-0.2.0 Setup.exe"
