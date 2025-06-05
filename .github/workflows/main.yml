@@ -10,6 +10,10 @@ jobs:
   build-linux:
     runs-on: windows-latest
     steps:
+      - name: Debug - show working directory and contents
+        run: |
+          echo "PWD: $PWD"
+          dir
       - name: Checkout repository
         uses: actions/checkout@v4
       # --- SSH for private submodule ---------------------------------
