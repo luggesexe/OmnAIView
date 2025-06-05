@@ -21,6 +21,7 @@ const config: ForgeConfig = {
   makers: [
     new MakerSquirrel({
       setupIcon: './images/icon.ico',
+      setupExe: 'OmnAIView-Setup.exe'
       // iconUrl: 'https://url/to/icon.ico', 
       // # If possible, a .ico file hosted by you on a web server should be entered here.
       // # It would be advisable to use the file from ./images/icon.ico.
