@@ -10,20 +10,19 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-linux:
+  Build-Windows:
     runs-on: windows-latest
     steps:
-      - name: Checkout repository
+      - name: Repository-Checkout
         uses: actions/checkout@v4
-      - name: Set up SSH for private submodules
-        run: |
-          npm run install:all
-          npm run build
-      # --- upload build artifact------------------
-      - name: Upload artifact
+      - name: Install NPM-Dependencies
+        run: npm run install:all
+      - name: Build Project
+        run: npm run build
+      - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: OmnaiView-windows-${{ github.ref_name }}
+          name: OmnaiView-Windows-${{ github.ref_name }}
           path: |
             electron\out\make\squirrel.windows\x64\RELEASES
             electron\out\make\squirrel.windows\x64\*.nupkg
